@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { View, Image, Pressable } from 'react-native';
+import { View, Pressable, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function TabLayout() {
@@ -11,10 +11,10 @@ export default function TabLayout() {
 
   return (
     <Tabs
-      initialRouteName="index" // 👈 index devient la page de démarrage
+      initialRouteName="index" 
       screenOptions={{
         headerShown: false,
-        tabBarStyle: { display: 'none' }, // On cache la tabBar par défaut
+        tabBarStyle: { display: 'none' },
       }}
       tabBar={(props) => (
         <View
@@ -39,7 +39,6 @@ export default function TabLayout() {
             elevation: 6,
           }}
         >
-          {/* Profil (nouvelle page) */}
           <Pressable onPress={() => props.navigation.navigate('profile')}>
             <View
               style={{
@@ -62,8 +61,31 @@ export default function TabLayout() {
               />
             </View>
           </Pressable>
-
-          {/* Téléphone */}
+          <Pressable onPress={() => props.navigation.navigate('index')}>
+            <View
+              style={{
+                width: 50,
+                height: 50,
+                borderRadius: 50,
+                backgroundColor:
+                  props.state.routes[props.state.index].name === 'index'
+                    ? activeBg
+                    : inactiveBg,
+                justifyContent: 'center',
+                alignItems: 'center',
+                overflow: 'hidden', 
+              }}
+            >
+              <Image
+                source={require('../../assets/logo.png')}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                }}
+                resizeMode="cover"
+              />
+            </View>
+          </Pressable>
           <Pressable onPress={() => props.navigation.navigate('explore')}>
             <View
               style={{

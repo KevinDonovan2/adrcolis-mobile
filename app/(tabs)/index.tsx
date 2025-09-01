@@ -32,7 +32,9 @@ export default function HomeScreen() {
       </View>
 
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={[styles.button, styles.favorite]}>
+        <TouchableOpacity style={[styles.button, styles.favorite]}
+        onPress={() => router.push("/trajet")}
+        >
           <Text style={styles.buttonDescription}>Trajet</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button, styles.pop]}>

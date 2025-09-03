@@ -12,7 +12,6 @@ export default function HomeScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* En-tête : Titre et Description */}
       <View style={styles.header}>
         <Text style={styles.title}>Que voulez-vous faire?</Text>
       </View>
@@ -25,8 +24,7 @@ export default function HomeScreen() {
             scan bordereau de livraison
           </Text>
         </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.button, styles.playlist]}>
+        <TouchableOpacity style={[styles.button, styles.playlist]} onPress={() => router.push("/listeContrats")}>
           <Text style={styles.buttonDescription}>scan colis chargement</Text>
         </TouchableOpacity>
       </View>
@@ -37,7 +35,7 @@ export default function HomeScreen() {
         >
           <Text style={styles.buttonDescription}>Trajet</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, styles.pop]}>
+        <TouchableOpacity style={[styles.button, styles.pop]} onPress={() => router.push("/listeContrats")}>
           <Text style={styles.buttonDescription}>Scan colis dechargement</Text>
         </TouchableOpacity>
       </View>

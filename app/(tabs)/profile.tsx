@@ -12,7 +12,7 @@ export default function Profile() {
       <View style={styles.cardHeader}>
         <Image
           source={{
-            uri: "https://randomuser.me/api/portraits/men/32.jpg", // photo exemple
+            uri: "https://randomuser.me/api/portraits/men/32.jpg", 
           }}
           style={styles.avatar}
         />
@@ -20,12 +20,10 @@ export default function Profile() {
         <Text style={styles.subtitle}>Livreur #69</Text>
         <Text style={styles.info}>+261 34 12 345 67</Text>
         <Text style={styles.info}>12 Mars 1992</Text>
-
-        {/* Bouton Modifier mes infos */}
         <TouchableOpacity
-  style={styles.editButton}
-  onPress={() => router.push("/modifierProfile")} // nom du fichier dans app/
->
+          style={styles.editButton}
+          onPress={() => router.push("/modifierProfile")} 
+        >
           <MaterialIcons name="edit" size={20} color="#555" />
           <Text style={styles.editText}>Modifier mes infos</Text>
         </TouchableOpacity>
@@ -35,7 +33,7 @@ export default function Profile() {
       <View style={styles.row}>
         <View style={styles.card}>
           <Text style={styles.cardSubtitle}>CLASSEMENT</Text>
-          <Text style={styles.cardValue}>3ème</Text>
+          <Text style={styles.cardValue}>2ème</Text>
           <Text style={styles.cardText}>sur 280 livreurs</Text>
         </View>
 
@@ -100,9 +98,10 @@ export default function Profile() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#f5f5f5", marginTop: 60 },
+  container: { flex: 1, backgroundColor: "#f5f5f5"},
   cardHeader: {
     marginHorizontal: 16,
+    marginTop:60,
     marginBottom: 16,
     borderRadius: 12,
     backgroundColor: "white",

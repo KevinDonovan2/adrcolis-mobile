@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Button, Alert } from "react-native";
 import { CameraView, useCameraPermissions } from "expo-camera";
 
-export default function ScanBordereauScreen() {
+export default function ScanColisChargementScreen() {
   const [permission, requestPermission] = useCameraPermissions();
   const [scanned, setScanned] = useState(false);
 
@@ -33,7 +33,7 @@ export default function ScanBordereauScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Scanner le code-barres du bordereau de livraison</Text>
+      <Text style={styles.title}>Scanner le code-barres de colis de chargement</Text>
       <View style={styles.cameraWrapper}>
         <CameraView
           style={styles.camera}

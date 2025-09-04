@@ -72,10 +72,15 @@ export default function ListeColis() {
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View style={styles.card}>
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() =>
+              router.push({ pathname: "/detailColis", params: { colisId: item.id } })
+            }
+          >
             <Text style={styles.colisText}>{item.numero}</Text>
             {renderIcon(item.status)}
-          </View>
+          </TouchableOpacity>
         )}
       />
 
@@ -93,7 +98,7 @@ export default function ListeColis() {
 
 const styles = StyleSheet.create({
   column: { display: "flex", flexDirection: "column" },
-  container: { flex: 1, backgroundColor: "#f5f5f5", padding: 16, marginTop: 8 },
+  container: { flex: 1, backgroundColor: "#f5f5f5", marginTop: 8 },
   header: {
     backgroundColor: "white",
     display: "flex",
@@ -101,8 +106,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: 16,
-    borderRadius: 12,
-    marginBottom: 20,
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 3,
@@ -110,13 +113,12 @@ const styles = StyleSheet.create({
   },
   headerTitle: { fontSize: 18, fontWeight: "bold", marginBottom: 6 },
   headerDetail: { fontSize: 14, color: "#555", marginBottom: 2 },
-
   circle: {
     width: 60,
     height: 60,
     borderRadius: 30,
-     borderWidth: 2,
-  borderColor: "black",
+    borderWidth: 2,
+    borderColor: "black",
     backgroundColor: "#68666649",
     justifyContent: "center",
     alignItems: "center",
@@ -126,15 +128,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "black",
   },
-
   card: {
     flexDirection: "row",
+    margin: 8,
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "white",
     padding: 16,
     borderRadius: 12,
-    marginBottom: 12,
     shadowColor: "#000",
     shadowOpacity: 0.05,
     shadowRadius: 2,
@@ -147,8 +148,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#555555",
     padding: 14,
+    marginBottom: 20,
+    marginRight: 10,
+    marginLeft: 10,
     borderRadius: 12,
-    marginTop: 20,
+    marginTop: 5,
   },
   scanButtonText: {
     color: "white",

@@ -105,10 +105,11 @@ export default function ListeContrats() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#f5f5f5", padding: 16, marginTop: 8 },
+  container: { flex: 1, backgroundColor: "#f5f5f5"},
   card: {
     backgroundColor: "white",
     padding: 16,
+    margin:15,
     borderRadius: 12,
     marginBottom: 12,
     shadowColor: "#000",

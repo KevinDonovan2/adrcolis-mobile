@@ -28,7 +28,14 @@ export default function Profile() {
           <Text style={styles.editText}>Modifier mes infos</Text>
         </TouchableOpacity>
       </View>
-
+      
+      {/* Bouton navigation */}
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push("/listeLivreurs")}
+      >
+        <Text style={styles.buttonText}>Voir la liste des classements</Text>
+      </TouchableOpacity>
       {/* CLASSEMENT & SCORE GLOBAL */}
       <View style={styles.row}>
         <View style={styles.card}>
@@ -86,13 +93,7 @@ export default function Profile() {
         </View>
       </View>
 
-      {/* Bouton navigation */}
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push("/listeLivreurs")}
-      >
-        <Text style={styles.buttonText}>Voir la liste des classements</Text>
-      </TouchableOpacity>
+      
     </ScrollView>
   );
 }
@@ -156,7 +157,7 @@ const styles = StyleSheet.create({
   divider: { width: 1, height: "100%", backgroundColor: "#ddd", marginHorizontal: 16 },
   button: {
     margin: 16,
-    padding: 16,
+    padding: 10,
     backgroundColor: '#555555ff',
     borderRadius: 12,
     alignItems: "center",

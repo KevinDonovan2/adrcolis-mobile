@@ -11,7 +11,7 @@ export default function TabLayout() {
 
   return (
     <Tabs
-      initialRouteName="index" 
+      initialRouteName="index"
       screenOptions={{
         headerShown: false,
         tabBarStyle: { display: 'none' },
@@ -61,6 +61,7 @@ export default function TabLayout() {
               />
             </View>
           </Pressable>
+
           <Pressable onPress={() => props.navigation.navigate('index')}>
             <View
               style={{
@@ -73,7 +74,7 @@ export default function TabLayout() {
                     : inactiveBg,
                 justifyContent: 'center',
                 alignItems: 'center',
-                overflow: 'hidden', 
+                overflow: 'hidden',
               }}
             >
               <Image
@@ -86,6 +87,7 @@ export default function TabLayout() {
               />
             </View>
           </Pressable>
+
           <Pressable onPress={() => props.navigation.navigate('explore')}>
             <View
               style={{

@@ -1,54 +1,52 @@
-import {
-    View,
-    Text,
-    TouchableOpacity,
-    StyleSheet,
-    ScrollView,
-} from 'react-native';
-import { useRouter } from "expo-router";
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
-  const router = useRouter();
+    const router = useRouter();
 
-  return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Que voulez-vous faire?</Text>
-      </View>
-      <View style={styles.buttonsContainer}>
-        <TouchableOpacity
-          style={[styles.button, styles.newSong]}
-          onPress={() => router.push("/scan-bordereau")}
-        >
-          <Text style={styles.buttonDescription}>
-            scan bordereau de livraison
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, styles.playlist]} onPress={() => router.push("/listeContrats")}>
-          <Text style={styles.buttonDescription}>scan colis chargement</Text>
-        </TouchableOpacity>
-      </View>
+    return (
+        <ScrollView contentContainerStyle={styles.container}>
+            <View style={styles.header}>
+                <Text style={styles.title}>Que voulez-vous faire?</Text>
+            </View>
+            <View style={styles.buttonsContainer}>
+                <TouchableOpacity
+                    style={[styles.button, styles.newSong]}
+                    onPress={() => router.push('/scan-bordereau')}
+                >
+                    <Text style={styles.buttonDescription}>scan bordereau de livraison</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.button, styles.playlist]}
+                    onPress={() => router.push('/listeContrats')}
+                >
+                    <Text style={styles.buttonDescription}>scan colis chargement</Text>
+                </TouchableOpacity>
+            </View>
 
-      <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={[styles.button, styles.favorite]}
-        onPress={() => router.push("/trajet")}
-        >
-          <Text style={styles.buttonDescription}>Trajet</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, styles.pop]} onPress={() => router.push("/listeContrats")}>
-          <Text style={styles.buttonDescription}>Scan colis dechargement</Text>
-        </TouchableOpacity>
-      </View>
+            <View style={styles.buttonsContainer}>
+                <TouchableOpacity
+                    style={[styles.button, styles.favorite]}
+                    onPress={() => router.push('/trajet')}
+                >
+                    <Text style={styles.buttonDescription}>Trajet</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.button, styles.pop]}
+                    onPress={() => router.push('/listeContrats')}
+                >
+                    <Text style={styles.buttonDescription}>Scan colis dechargement</Text>
+                </TouchableOpacity>
+            </View>
 
-      <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={[styles.button, styles.pop]}>
-          <Text style={styles.buttonDescription}>PODw</Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
-  );
+            <View style={styles.buttonsContainer}>
+                <TouchableOpacity style={[styles.button, styles.pop]}>
+                    <Text style={styles.buttonDescription}>PODw</Text>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
+    );
 }
-
 
 const styles = StyleSheet.create({
     container: {

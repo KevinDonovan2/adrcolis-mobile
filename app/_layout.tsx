@@ -7,27 +7,26 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
+    const colorScheme = useColorScheme();
+    const [loaded] = useFonts({
+        SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    });
 
-  if (!loaded) {
-    return null;
-  }
+    if (!loaded) {
+        return null;
+    }
 
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{ headerShown: true }}>
-        
-        <Stack.Screen name="login" options={{ headerShown: false }} />
-        <Stack.Screen name="creationLivreur" options={{ headerShown: false }} />
-        <Stack.Screen name="scanLogin" options={{ headerShown: false }} />
-        <Stack.Screen name="bienvenue" options={{ headerShown: false }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+            <Stack screenOptions={{ headerShown: true }}>
+                <Stack.Screen name="login" options={{ headerShown: false }} />
+                <Stack.Screen name="creationLivreur" options={{ headerShown: false }} />
+                <Stack.Screen name="scanLogin" options={{ headerShown: false }} />
+                <Stack.Screen name="bienvenue" options={{ headerShown: false }} />
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                <Stack.Screen name="+not-found" />
+            </Stack>
+            <StatusBar style="auto" />
+        </ThemeProvider>
+    );
 }
